@@ -47,7 +47,7 @@ class SongkoreaController extends Controller
         $this->validate($request, [
             'namesong' => 'required|max:255',
             'artist' => 'required',
-            'rating' => 'required|numberic'
+            'rating' => 'required'
         ]);
 
         $songkorea = new Songkorea;
@@ -71,6 +71,12 @@ class SongkoreaController extends Controller
     public function show($id)
     {
         //
+        $songkorea = Songkorea::find($id);
+        $data = array(
+          'songkorea' => $songkorea
+        );
+
+        return view('songkorea/show',$data);
     }
 
     /**
@@ -82,6 +88,7 @@ class SongkoreaController extends Controller
     public function edit($id)
     {
         //
+
     }
 
     /**

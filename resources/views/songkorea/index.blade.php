@@ -26,9 +26,9 @@
           <td>{{ $song['artist'] }}</td>
           <td>{{ $song['durations'] }}</td>
           <td>{{ $song['rating'] }}</td>
-          <td><i class="glyphicon glyphicon-zoom-in"></i></td>
-          <td><i class="glyphicon glyphicon-zoom-in"></td>
-          <td><i class="glyphicon glyphicon-trash"></td>
+          <td>{{ Html::link('songkorea/'.$song['id'],'',array('class'=>'glyphicon glyphicon-zoom-in')) }} </td>
+          <td>{{ Html::link('songkorea/'.$song['id'],'',array('class'=>'glyphicon glyphicon-cog')) }} </td>
+          <td>{{ Html::link('songkorea/'.$song['id'],'',array('class'=>'glyphicon glyphicon-trash')) }} </td>
         </tr>
       @empty
         <tr>
