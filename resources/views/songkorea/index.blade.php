@@ -5,6 +5,11 @@
 <h1>List of Korean Songs</h1>
 <p></p>
 <p></p>
+@if(Session::has('message'))
+    <div class="alert alert-success">
+          {{ Session::get('message') }}
+    </div>
+@endif
 <table class="table table-warning">
   <thead>
       <tr>
@@ -27,8 +32,11 @@
           <td>{{ $song['durations'] }}</td>
           <td>{{ $song['rating'] }}</td>
           <td>{{ Html::link('songkorea/'.$song['id'],'',array('class'=>'glyphicon glyphicon-zoom-in')) }} </td>
-          <td>{{ Html::link('songkorea/'.$song['id'],'',array('class'=>'glyphicon glyphicon-cog')) }} </td>
-          <td>{{ Html::link('songkorea/'.$song['id'],'',array('class'=>'glyphicon glyphicon-trash')) }} </td>
+          <td>{{ Html::link('songkorea/'.$song['id'].'/edit','',array('class'=>'glyphicon glyphicon-cog')) }} </td>
+          {{ Form::open(['route'=> ['songkorea.destroy',$song['id'],'method'=>'delete' ] ]) }}
+          <input type="hidden" name="_method" value="delete">
+          <td>{{ Form::submit('Delete',array('class'=>'btn btn-danger')) }} </td>
+          {{ Form::close() }}
         </tr>
       @empty
         <tr>

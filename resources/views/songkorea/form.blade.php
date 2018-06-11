@@ -6,7 +6,7 @@
   <div class="panel panel-primary">
     <div class="panel-heading">
       @if(isset($songkorea))
-        Edit Form
+        Edit Form {{ $songkorea->id }}
       @else
         Add Form
       @endif
@@ -80,8 +80,8 @@
                 {{ Form::label('rating', 'Rating') }}
             </div>
             <div class="col-md-5">
-              @if(isset($songkorea->artist))
-                {{ Form::number('rating',$songkorea->artist, ['class'=>'form-control']) }}
+              @if(isset($songkorea->rating))
+                {{ Form::number('rating',$songkorea->rating, ['class'=>'form-control']) }}
               @else
                 {{ Form::number('rating','', ['class'=>'form-control']) }}
               @endif

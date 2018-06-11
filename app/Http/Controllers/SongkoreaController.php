@@ -88,6 +88,13 @@ class SongkoreaController extends Controller
     public function edit($id)
     {
         //
+        if($id!==''){
+          $songkorea = Songkorea::find($id);
+          $data = array(
+              'songkorea' => $songkorea
+          );
+        return view('songkorea/form',$data);
+        }
 
     }
 
@@ -101,6 +108,24 @@ class SongkoreaController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+            'namesong' => 'required|max:255',
+            'artist' => 'required',
+            'rating' => 'required'
+        ]);
+
+        $songkorea = Songkorea::find($id);
+        $songkorea->namesong = $request->namesong;
+        $songkorea->artist = $request->artist;
+        $songkorea->durations = $request->durations;
+        $songkorea->about = $request->about;
+        $songkorea->rating = $request->rating;
+
+        $songkorea->save();
+
+        Session::flash('message','Success Update song ID : '.$id);
+
+        return redirect('songkorea');
     }
 
     /**
@@ -111,6 +136,10 @@ class SongkoreaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $songkorea = Songkorea::find($id);
+        $songkorea->delete();
+
+        Session::flash('message','Success Delete song ID : '.$id);
+        return redirect('songkorea');
     }
 }
