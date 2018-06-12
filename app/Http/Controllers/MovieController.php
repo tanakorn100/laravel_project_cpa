@@ -20,7 +20,7 @@ class MovieController extends Controller{
     }
 
     public function viewMovie(){
-        return 'viewMovie';
+        return 'viewMovie222';
     }
 
 }
