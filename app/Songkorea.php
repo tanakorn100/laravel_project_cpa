@@ -11,4 +11,6 @@ class Songkorea extends Model
       'namesong' , 'artist' , 'durations' , 'about' , 'rating'
     ];
 
+    protected $dates = ['created_at'];
+
 }

@@ -14,6 +14,7 @@
           <li>Duration : {{ $songkorea->durations }} </li>
           <li>About : {{ $songkorea->about }} </li>
           <li>Rating : {{ $songkorea->rating }} </li>
+          <li>Create At : {{ $songkorea->created_at }} ( {{ $songkorea->created_at->diffForHumans() }} ) </li>
         </ul>
     </div>
   </div>
