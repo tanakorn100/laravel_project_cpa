@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Comments;
 
 class CommentController extends Controller
 {
@@ -35,6 +36,19 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'comment' => 'required',
+            'user_id' => 'required'
+        ]);
+
+        $comments = new Comments;
+        $comments->comment = $request->comment;
+        $comments->user_id = $request->user_id;
+        $comments->blog_id = $request->blog_id;
+        $comments->save();
+
+        return redirect('blog');
+
     }
 
     /**

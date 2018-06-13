@@ -18,6 +18,7 @@
 
 	</div>
 	{{ Html::script(('js\jquery.min.js')) }}
+	{{ Html::script(('js\blog\app.js')) }}
 	{{ Html::script(('bootstrap3\js\bootstrap.min.js')) }}
 
 </body>

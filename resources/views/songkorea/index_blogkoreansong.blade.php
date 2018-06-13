@@ -10,21 +10,28 @@
           {{ Session::get('message') }}
     </div>
 @endif
-      @forelse($blogkoreansong as $song)
+      @forelse($blogkoreansong as $blog)
         <div class="row">
           <div class="col-md-12">
             <div class="panel panel-primary ">
               <div class="panel-heading">
-                    <b>{{ $song->title }}</b>
+                    <b>{{ $blog->title }}</b>
               </div>
               <div class="panel panel-body">
-                    {{ $song->detail }}
+                    {{ $blog->detail }}
               </div>
-              <div class="panel panel-footer text-right">
-                  Last Update At : {{ $song->updated_at->diffForHumans() }}
-                  {{ Html::link('#', 'Comment', array(
-                    'class' => 'addComment'
-                  )) }}
+              <div class="panel panel-footer">
+                  <div class="row">
+                      <div class="col-md-6 text-left">
+                            Last Update : {{ $blog->updated_at->diffForHumans() }}
+                      </div>
+                      <div class="col-md-6 text-right">
+                        {{ Html::link('#', 'Comment'  , array(
+                          'class' => 'addComment',
+                          'blog_id' => $blog->id
+                        )  ) }}
+                      </div>
+                    </div>
               </div>
             </div>
           </div>
@@ -32,15 +39,22 @@
 
         <!-- Comment Section -->
         @forelse ($comments as $comment)
-            @if ($song->id == $comment->blog_id)
+            @if ($blog->id == $comment->blog_id)
               <div class="row">
                   <div class="col-md-9 col-md-offset-3">
                     <div class="panel panel-info ">
                       <div class="panel panel-body">
                           {{ $comment->comment }}
                       </div>
-                      <div class="panel panel-footer  text-right">
-                        Comment At : {{ $comment->updated_at->diffForHumans() }}
+                      <div class="panel panel-footer">
+                          <div class="row">
+                              <div class="col-md-6 text-left">
+                                  By : {{ $comment->user_id }}
+                              </div>
+                              <div class="col-md-6 text-right">
+                                  time : {{ $comment->updated_at->diffForHumans() }}
+                              </div>
+                          </div>
                       </div>
                     </div>
                   </div>
@@ -63,18 +77,27 @@
       @endforelse
 <div class="modal fade">
     <div class="modal-dialog">
+      {{ Form::open(['method' => 'post', 'action' => 'CommentController@store']) }}
+      {{ Form::hidden('blog_id','', array('id' => 'blog_id')) }}
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Comment</h4>
             </div>
             <div class="modal-body">
-
+                <div class="form-group">
+                      <label for="comment">Comment</label>
+                      {{ Form::textarea('comment', '', ['class' => 'form-control']) }}
+                </div>
+                <div class="form-group">
+                      <label for="user">User ID</label>
+                      {{ Form::number('user_id', '', ['class' => 'form-control']) }}
+                </div>
             </div>
             <div class="modal-footer">
-
+                  {{ Form::submit('save',['class' => 'btn btn-primary']) }}
             </div>
         </div>
+      {{ Form::close() }}
     </div>
 </div>{{-- add comment --}}
-
 @endsection

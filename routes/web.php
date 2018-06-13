@@ -47,5 +47,6 @@ Route::resource('song','Song\SongController');
 Route::resource('songkorea','SongkoreaController');
 
 Route::resource('blog','BlogsongkoreaController');
+Route::resource('comment','CommentController');
 
 Route::resource('line','LineController');

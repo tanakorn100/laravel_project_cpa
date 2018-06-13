@@ -25,6 +25,7 @@ class BlogsongkoreaController extends Controller
         $sorted_blog = $blogkoreansong->sortBy('id');
         // $comments = Comments::->where('blog_id', $sorted['id']);
         $comments = Comments::all();
+
         $data = array(
             'script' => $script,
             'blogkoreansong' => $sorted_blog,
