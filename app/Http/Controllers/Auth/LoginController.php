@@ -46,15 +46,5 @@ class LoginController extends Controller
         return 'Welcome To Controller ' . $id;
     }
 
-    // Regular Expression
-
-    public function book($id)
-    {
-        return 'Book ID : ' . $id;
-    }
-
-    public function poll(){
-        return 'Welcome to POLL!!';
-    }
 
 }

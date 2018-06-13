@@ -5,12 +5,14 @@
 <h1>List of Korean Songs</h1>
 <p></p>
 <p></p>
+<h2>{{ Cookie::get('language') }}</h2>
+<h5>Name : {{ Cookie::get('Name') }}</h5>
 @if(Session::has('message'))
     <div class="alert alert-success">
           {{ Session::get('message') }}
     </div>
 @endif
-<table class="table table-warning">
+<table class="table table-hover">
   <thead>
       <tr>
         <th>ID</th>
@@ -25,8 +27,8 @@
     </thead>
     <tbody>
       @forelse($songkorea as $song)
-        <tr class="table-light">
-          <td>{{ $song['id'] }}</td>
+        <tr class="table-light" >
+          <td align="center">{{ $song['id'] }}</td>
           <td>{{ $song['namesong'] }}</td>
           <td>{{ $song['artist'] }}</td>
           <td>{{ $song['durations'] }}</td>

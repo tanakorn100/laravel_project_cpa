@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Songkorea;
 use Illuminate\Http\Request;
 use Session;
+use Cookie;
 use Validator;
 
 class SongkoreaController extends Controller
@@ -18,6 +19,11 @@ class SongkoreaController extends Controller
     {
         //
         $songkorea = Songkorea::all();
+
+        // Session::put('language','Thai');
+        // Cookie::queue('name','values','minutes'); create cookie
+        // Cookie::queue('language','Thai',5);
+        Cookie::queue(Cookie::forever('Name','Tanakorn'));
         $data = array(
             'songkorea' => $songkorea
         );
