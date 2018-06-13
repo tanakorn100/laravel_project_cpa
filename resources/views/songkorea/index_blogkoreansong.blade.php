@@ -22,6 +22,9 @@
               </div>
               <div class="panel panel-footer text-right">
                   Last Update At : {{ $song->updated_at->diffForHumans() }}
+                  {{ Html::link('#', 'Comment', array(
+                    'class' => 'addComment'
+                  )) }}
               </div>
             </div>
           </div>
@@ -46,8 +49,6 @@
         @empty
 
         @endforelse
-
-
       @empty
         <div class="panel panel-danger">s
           <div class="panel-heading">
@@ -60,5 +61,20 @@
           </div>
         </div>
       @endforelse
+<div class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Comment</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>{{-- add comment --}}
 
 @endsection

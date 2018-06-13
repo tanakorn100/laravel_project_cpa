@@ -17,14 +17,17 @@ class BlogsongkoreaController extends Controller
      */
     public function index()
     {
-        //
+        // script for add a comment
+        $script = array('js\blog\app.js');
+
         $blogkoreansong = Blogkoreansong::where('deleted',1)->get();
         // $blogkoreansong = DB::table('blogkoreansongs')->get();
-        $sorted = $blogkoreansong->sortBy('id');
+        $sorted_blog = $blogkoreansong->sortBy('id');
         // $comments = Comments::->where('blog_id', $sorted['id']);
         $comments = Comments::all();
         $data = array(
-            'blogkoreansong' => $sorted,
+            'script' => $script,
+            'blogkoreansong' => $sorted_blog,
             'comments' => $comments
         );
         return view('songkorea.index_blogkoreansong',$data);
