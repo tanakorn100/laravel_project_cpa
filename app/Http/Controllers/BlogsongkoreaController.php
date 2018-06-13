@@ -6,6 +6,7 @@ use App\Blogkoreansong;
 use Illuminate\Http\Request;
 use Session;
 use Validator;
+use DB;
 
 class BlogsongkoreaController extends Controller
 {
@@ -18,11 +19,12 @@ class BlogsongkoreaController extends Controller
     {
         //
         $blogkoreansong = Blogkoreansong::all();
+        // $blogkoreansong = DB::table('blogkoreansongs')->get();
+        // dd($blogkoreansong);
         $data = array(
-            'blogkoransong' => $blogkoreansong
+            'blogkoreansong' => $blogkoreansong
         );
-
-        return View('songkorea.index_blogkoreansong',$data);
+        return view('songkorea.index_blogkoreansong',$data);
     }
 
     /**
@@ -55,6 +57,12 @@ class BlogsongkoreaController extends Controller
     public function show($id)
     {
         //
+        $blogkoreansong = Blogkoreansong::findOrFail($id);
+        $data = array(
+          'blogsongkorea' => $blogkoreansong
+        );
+
+        return view('songkorea.show_blog',$data);
     }
 
     /**

@@ -14,23 +14,19 @@
   <thead>
       <tr>
         <th>ID</th>
-        <th>Name song</th>
-        <th>Artist</th>
-        <th>Durations</th>
-        <th>Rating</th>
+        <th>Title</th>
+        <th>Create At</th>
         <th>Detail</th>
         <th>Update</th>
         <th>Delete</th>
       </tr>
     </thead>
     <tbody>
-      @forelse($songkorea as $song)
+      @forelse($blogkoreansong as $song)
         <tr class="table-light">
           <td>{{ $song['id'] }}</td>
-          <td>{{ $song['namesong'] }}</td>
-          <td>{{ $song['artist'] }}</td>
-          <td>{{ $song['durations'] }}</td>
-          <td>{{ $song['rating'] }}</td>
+          <td>{{ $song['title'] }}</td>
+          <td>{{ $song['created_at'] }}</td>
           <td>{{ Html::link('songkorea/'.$song['id'],'',array('class'=>'glyphicon glyphicon-zoom-in')) }} </td>
           <td>{{ Html::link('songkorea/'.$song['id'].'/edit','',array('class'=>'glyphicon glyphicon-cog')) }} </td>
           {{ Form::open(['route'=> ['songkorea.destroy',$song['id'],'method'=>'delete' ] ]) }}
