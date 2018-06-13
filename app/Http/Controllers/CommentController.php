@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Blogkoreansong;
-use App\Comments;
 use Illuminate\Http\Request;
-use Session;
-use Validator;
 
-class BlogsongkoreaController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,16 +14,6 @@ class BlogsongkoreaController extends Controller
     public function index()
     {
         //
-        $blogkoreansong = Blogkoreansong::where('deleted',1)->get();
-        // $blogkoreansong = DB::table('blogkoreansongs')->get();
-        $sorted = $blogkoreansong->sortBy('id');
-        // $comments = Comments::->where('blog_id', $sorted['id']);
-        $comments = Comments::all();
-        $data = array(
-            'blogkoreansong' => $sorted,
-            'comments' => $comments
-        );
-        return view('songkorea.index_blogkoreansong',$data);
     }
 
     /**
@@ -60,12 +46,6 @@ class BlogsongkoreaController extends Controller
     public function show($id)
     {
         //
-        $blogkoreansong = Blogkoreansong::findOrFail($id);
-        $data = array(
-          'blogkoreansong' => $blogkoreansong
-        );
-
-        return view('songkorea.show_blog',$data);
     }
 
     /**

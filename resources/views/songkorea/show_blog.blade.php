@@ -17,4 +17,11 @@
         </ul>
     </div>
   </div>
+  <div class="row">
+    <div class="col-xs-5">
+        {{ Html::link('blog','Back', array(
+          'class' => 'btn btn-primary'
+        )) }}
+    </div>
+  </div>
 @endsection
