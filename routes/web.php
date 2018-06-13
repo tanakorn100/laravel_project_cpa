@@ -19,7 +19,7 @@ Route::get('hello', function(){
 	return 'Hello Laravel';
 });
 
-
+// ------ test Laravel -------
 Route::get('welcome/hello','Auth\LoginController@hello');
 Route::get('parameter/{id?}','Auth\Logincontroller@parameter');
 Route::get('book/{id}','Auth\Logincontroller@book')->Where('id','[0-9]+');
@@ -42,11 +42,14 @@ Route::get('radio','RadioController@index');
 Route::get('songIndex','Song\SongController@index');
 Route::resource('song','Song\SongController');
 
-// -------- Song KOREA Website Project (NEW Project) -----------
+// -------- Korean Song Website Project (NEW Project) -----------
 
 Route::resource('songkorea','SongkoreaController');
-
 Route::resource('blog','BlogsongkoreaController');
 Route::resource('comment','CommentController');
 
-Route::resource('line','LineController');
+
+
+// -------- Korean Song Website Project (Authentication Section) -----------
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
