@@ -53,3 +53,4 @@ Route::resource('comment','CommentController');
 // -------- Korean Song Website Project (Authentication Section) -----------
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home', 'SongkoreaController@index');

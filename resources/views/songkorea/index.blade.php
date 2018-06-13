@@ -5,8 +5,7 @@
 <h1>List of Korean Songs</h1>
 <p></p>
 <p></p>
-<h2>{{ Cookie::get('language') }}</h2>
-<h5>Name : {{ Cookie::get('Name') }}</h5>
+
 @if(Session::has('message'))
     <div class="alert alert-success">
           {{ Session::get('message') }}
