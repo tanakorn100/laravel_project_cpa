@@ -46,9 +46,14 @@
     </tbody>
 </table>
 <div class="row">
-  <div class="col-xs-5">
+  <div class="col-xs-5 text-left">
       {{ Html::link('songkorea/create','Add Song', array(
         'class' => 'btn btn-primary'
+      )) }}
+  </div>
+  <div class="col-xs-7 text-right">
+      {{ Html::link('blog','Go to Blog', array(
+        'class' => 'btn btn-success'
       )) }}
   </div>
 </div>

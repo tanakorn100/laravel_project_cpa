@@ -18,4 +18,11 @@
         </ul>
     </div>
   </div>
+  <div class="row">
+    <div class="col-xs-7 text-left">
+        {{ Html::link('songkorea','Back', array(
+          'class' => 'btn btn-danger'
+        )) }}
+    </div>
+  </div>
 @endsection
