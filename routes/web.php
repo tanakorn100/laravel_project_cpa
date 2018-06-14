@@ -44,7 +44,7 @@ Route::resource('song','Song\SongController');
 
 // -------- Korean Song Website Project (NEW Project) -----------
 
-Route::resource('songkorea','SongkoreaController');
+Route::resource('koreansong','SongkoreaController');
 Route::resource('blog','BlogsongkoreaController');
 Route::resource('comment','CommentController');
 
