@@ -71,7 +71,9 @@ class SongkoreaController extends Controller
 
         $songkorea->save();
 
-        return redirect('songkorea');
+        Session::flash('message','Add song information Successfully!');
+
+        return redirect('koreansong');
     }
 
     /**
@@ -137,7 +139,7 @@ class SongkoreaController extends Controller
 
         Session::flash('message','Success Update song ID : '.$id);
 
-        return redirect('songkorea');
+        return redirect('koreansong');
     }
 
     /**
@@ -152,6 +154,6 @@ class SongkoreaController extends Controller
         $songkorea->delete();
 
         Session::flash('message','Success Delete song ID : '.$id);
-        return redirect('songkorea');
+        return redirect('koreansong');
     }
 }
