@@ -64,7 +64,7 @@
 
         @endforelse
       @empty
-        <div class="panel panel-danger">s
+        <div class="panel panel-danger">
           <div class="panel-heading">
                 <b></b>
           </div>
