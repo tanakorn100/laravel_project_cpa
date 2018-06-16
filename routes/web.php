@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('welcome', function () {
     return view('welcome');
 });
 
@@ -53,4 +53,4 @@ Route::resource('comment','CommentController');
 // -------- Korean Song Website Project (Authentication Section) -----------
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('home', 'SongkoreaController@index');
+Route::get('/', 'SongkoreaController@index');
