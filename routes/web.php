@@ -21,7 +21,7 @@ Route::get('hello', function(){
 
 // ------ test Laravel -------
 Route::get('welcome/hello','Auth\LoginController@hello');
-Route::get('parameter/{id?}','Auth\Logincontroller@parameter');
+Route::get('parameter/{id?}','Auth\LoginController@parameter');
 Route::get('book/{id}','Auth\Logincontroller@book')->Where('id','[0-9]+');
 Route::match(['get','post'],'bill',function(){
 	if(Request::isMethod('get')){
