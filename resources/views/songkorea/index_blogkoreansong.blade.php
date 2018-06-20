@@ -11,6 +11,7 @@
     </div>
 @endif
       @forelse($blogkoreansong as $blog)
+        <div class="bgimg">
         <div class="row">
           <div class="col-md-12">
             <div class="panel panel-primary ">
@@ -35,6 +36,7 @@
               </div>
             </div>
           </div>
+        </div>
         </div>
 
         <!-- Comment Section -->
@@ -100,62 +102,4 @@
       {{ Form::close() }}
     </div>
 </div>{{-- add comment --}}
-
-<style type="text/css">
-.bgimg {
-    background-image: url("/images/IMG_3909.JPG");
-}
-</style>
-<div class="bgimg">
-    div with background
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
 @endsection

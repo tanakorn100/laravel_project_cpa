@@ -3,6 +3,11 @@
 <head>
 	<title>Laravel 5.5 : @yield('page_title')</title>
 	{{ Html::style(('//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')) }}
+	<style type="text/css">
+	.bgimg {
+	    background-image: url("/images/IMG_3909.JPG");
+	}
+	</style>
 	{{--
 	@if(isset($style))
 		@foreach ($style as $css)
