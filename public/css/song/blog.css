@@ -1,3 +1,5 @@
 .bgimg {
     background-image: url("/images/IMG_3909.JPG");
-}
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
