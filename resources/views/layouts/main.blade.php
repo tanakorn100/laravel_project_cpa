@@ -19,8 +19,11 @@
 </head>
 <body>
 	<div class="container">
-		@yield('content')
+		<div class="bgimg">
 
+
+		@yield('content')
+		</div>
 	</div>
 	{{ Html::script(('js\jquery.min.js')) }}
 	{{ Html::script(('js\blog\app.js')) }}

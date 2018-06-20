@@ -11,7 +11,6 @@
     </div>
 @endif
       @forelse($blogkoreansong as $blog)
-        <div class="bgimg">
         <div class="row">
           <div class="col-md-12">
             <div class="panel panel-primary ">
@@ -36,7 +35,6 @@
               </div>
             </div>
           </div>
-        </div>
         </div>
 
         <!-- Comment Section -->
