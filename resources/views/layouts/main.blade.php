@@ -14,7 +14,7 @@
 
 </head>
 <body>
-	<div class="bgimg">
+	<div class="body">
 		<div class="container">
 
 
