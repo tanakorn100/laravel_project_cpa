@@ -100,4 +100,13 @@
       {{ Form::close() }}
     </div>
 </div>{{-- add comment --}}
+
+<style type="text/css">
+.bgimg {
+    background-image: url('/images/IMG_3909.png');
+}
+</style>
+<div class="bgimg">
+    div with background
+</div>
 @endsection
