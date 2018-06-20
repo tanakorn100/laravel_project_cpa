@@ -3,7 +3,7 @@
 <head>
 	<title>Laravel 5.5 : @yield('page_title')</title>
 	{{ Html::style(('//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')) }}
-	{{ Html::sytle(('css\song\blog.css')) }}
+	{{ Html::style(('css\song\blog.css')) }}
 	{{--
 	@if(isset($style))
 		@foreach ($style as $css)
@@ -14,7 +14,7 @@
 
 </head>
 <body>
-	<div class="body">
+	<div class="bgimg">
 		<div class="container">
 
 
