@@ -103,7 +103,7 @@
 
 <style type="text/css">
 .bgimg {
-    background-image: url('/images/IMG_3909.JPG');
+    background-image: url("/images/IMG_3909.JPG");
 }
 </style>
 <div class="bgimg">
