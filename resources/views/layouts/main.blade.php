@@ -18,8 +18,9 @@
 
 </head>
 <body>
-	<div class="container">
-		<div class="bgimg">
+	<div class="bgimg">
+		<div class="container">
+
 
 
 		@yield('content')
