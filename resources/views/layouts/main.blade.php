@@ -11,6 +11,9 @@
 		@endforeach
 	@endif
 	--}}
+	<style media="screen">
+
+	</style>
 
 </head>
 <body>
