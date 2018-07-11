@@ -36,12 +36,14 @@
           <td>{{ $song['durations'] }}</td>
           <td>{{ $song['rating'] }}</td>
           <td><audio controls><source src="{{ $song['image_path'] }}" type="audio/mpeg"></audio></td>
+            @auth
           <td>{{ Html::link('songkorea/'.$song['id'],'',array('class'=>'glyphicon glyphicon-zoom-in')) }} </td>
           <td>{{ Html::link('songkorea/'.$song['id'].'/edit','',array('class'=>'glyphicon glyphicon-cog')) }} </td>
           {{ Form::open(['route'=> ['songkorea.destroy',$song['id'],'method'=>'delete' ] ]) }}
           <input type="hidden" name="_method" value="delete">
           <td>{{ Form::submit('Delete',array('class'=>'btn btn-danger')) }} </td>
           {{ Form::close() }}
+            @endauth
         </tr>
       @empty
         <tr>
@@ -62,5 +64,7 @@
       )) }}
   </div>
 </div>
+
+
 
 @endsection
