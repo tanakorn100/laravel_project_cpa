@@ -28,7 +28,7 @@
     <tbody>
       @forelse($songkorea as $song)
         <tr class="table-light" >
-          <td align="center"> <img src="{{ url($song['cover_album']) }}" class="img-responsive" style="max-width: 30px"> </td>
+          <td align="center"> <img src="{{ $song['cover_album'] }}" class="img-responsive" style="max-width: 60px"> </td>
           <td>{{ $song['namesong'] }}</td>
           <td>{{ $song['artist'] }}</td>
           <td>{{ $song['durations'] }}</td>
