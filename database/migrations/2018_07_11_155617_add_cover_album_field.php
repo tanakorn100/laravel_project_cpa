@@ -13,7 +13,7 @@ class AddCoverAlbumField extends Migration
      */
     public function up()
     {
-        Schema::table('songs', function (Blueprint $table) {
+        Schema::table('songkoreas', function (Blueprint $table) {
             $table->string('cover_album')->nullable();
         });
     }
@@ -25,7 +25,7 @@ class AddCoverAlbumField extends Migration
      */
     public function down()
     {
-        Schema::table('songs', function (Blueprint $table) {
+        Schema::table('songkoreas', function (Blueprint $table) {
             $table->dropColumn('cover_album');
         });
     }

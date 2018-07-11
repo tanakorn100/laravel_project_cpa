@@ -14,7 +14,7 @@
 <table class="table table-hover">
   <thead>
       <tr>
-        <th>ID</th>
+        <th></th>
         <th>Name song</th>
         <th>Artist</th>
         <th>Durations</th>
@@ -28,7 +28,7 @@
     <tbody>
       @forelse($songkorea as $song)
         <tr class="table-light" >
-          <td align="center">{{ $song['id'] }}</td>
+          <td align="center">{{ $song['cover_album'] }}</td>
           <td>{{ $song['namesong'] }}</td>
           <td>{{ $song['artist'] }}</td>
           <td>{{ $song['durations'] }}</td>
