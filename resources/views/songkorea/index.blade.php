@@ -20,9 +20,11 @@
         <th>Durations</th>
         <th>Rating</th>
         <th >Music</th>
+        @auth
         <th>Detail</th>
         <th>Update</th>
         <th>Delete</th>
+        @endauth
       </tr>
     </thead>
     <tbody>
