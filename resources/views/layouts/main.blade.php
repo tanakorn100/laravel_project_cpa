@@ -3,7 +3,7 @@
 <head>
 	<title>Laravel 5.5 : @yield('page_title')</title>
 	{{ Html::style(('//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')) }}
-	{{-- {{ Html::style(('css\song\blog.css')) }} --}}
+	{{ Html::style(('css\song\blog.css')) }}
 	{{--
 	@if(isset($style))
 		@foreach ($style as $css)
@@ -11,13 +11,12 @@
 		@endforeach
 	@endif
 	--}}
-	<style media="screen">
-
-	</style>
 
 </head>
 <body>
-	<div class="bgimg">
+	<div class="main-container">
+
+
 		<div class="container">
 
 
@@ -30,4 +29,9 @@
 	{{ Html::script(('//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js')) }}
 
 </body>
+<footer>
+	<div class="footer">
+		@yield('player')
+	</div>
+</footer>
 </html>

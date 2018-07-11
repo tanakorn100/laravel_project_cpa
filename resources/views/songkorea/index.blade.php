@@ -19,8 +19,9 @@
         <th>Artist</th>
         <th>Durations</th>
         <th>Rating</th>
-        <th >Music</th>
+        <th></th>
         @auth
+        <th >Music</th>
         <th>Detail</th>
         <th>Update</th>
         <th>Delete</th>
@@ -35,8 +36,9 @@
           <td>{{ $song['artist'] }}</td>
           <td>{{ $song['durations'] }}</td>
           <td>{{ $song['rating'] }}</td>
-          <td><audio controls><source src="{{ $song['image_path'] }}" type="audio/mpeg"></audio></td>
+          <th><button class="btn btn-info"><i class="glyphicon glyphicon-music pnx-msg-icon pnx-icon-msg-warning"></i> lis!</button></th>
             @auth
+          <td><audio controls><source src="{{ $song['image_path'] }}" type="audio/mpeg"></audio></td>
           <td>{{ Html::link('songkorea/'.$song['id'],'',array('class'=>'glyphicon glyphicon-zoom-in')) }} </td>
           <td>{{ Html::link('songkorea/'.$song['id'].'/edit','',array('class'=>'glyphicon glyphicon-cog')) }} </td>
           {{ Form::open(['route'=> ['songkorea.destroy',$song['id'],'method'=>'delete' ] ]) }}
@@ -67,4 +69,21 @@
 
 
 
+
+@endsection
+
+@section('player')
+  <nav class="navbar navbar-default" style="margin: 0;">
+    <div class="container">
+      <div class="col-md-1">
+        <img src="musics\cover\UNDIVIDED.jpg" class="img-responsive" style="max-width: 60px">
+      </div>
+      <div class="col-md-9">
+        <audio controls style="width: 100%;"><source src="musics/Kangaroo(Prod. ZICO).m4a" type="audio/mpeg"></audio>
+      </div>
+      <div class="col-md-2">
+        <i class="glyphicon glyphicon-th-list pnx-msg-icon pnx-icon-msg-warning"></i>
+      </div>
+    </div>
+  </nav>
 @endsection
