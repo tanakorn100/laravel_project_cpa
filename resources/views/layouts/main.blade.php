@@ -34,7 +34,7 @@
 	        <img src="musics\cover\NEKKOYA.jpg" class="img-responsive" style="max-width: 60px">
 	      </div>
 	      <div class="col-md-9">
-	        <audio controls style="width: 100%;"><source src="musics/PICK ME.mp3" type="audio/mpeg"></audio>
+						<audio controls style="width: 100%;"><source src="musics/PICK ME.mp3" type="audio/mpeg"></audio>
 	      </div>
 	      <div class="col-md-2">
 	      </div>
