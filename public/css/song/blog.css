@@ -12,10 +12,17 @@
       padding-bottom: 50px;
   }
 
-  .footer{
+.footer{
       width: 100%;
-      position: static;
+      position: fixed;
       bottom: 0;
+      margin: 0;
+}
+
+.header{
+      width: 100%;
+      position: fixed;
+      top: 0;
       margin: 0;
   }
 
