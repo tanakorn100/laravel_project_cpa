@@ -78,18 +78,3 @@
 
 
 @endsection
-
-@section('player')
-  <nav class="navbar navbar-default" style="margin: 0;">
-    <div class="container">
-      <div class="col-md-1">
-        <img src="musics\cover\UNDIVIDED.jpg" class="img-responsive" style="max-width: 60px">
-      </div>
-      <div class="col-md-9">
-        <audio controls style="width: 100%;"><source src="musics/Kangaroo(Prod. ZICO).m4a" type="audio/mpeg"></audio>
-      </div>
-      <div class="col-md-2">
-      </div>
-    </div>
-  </nav>
-@endsection
