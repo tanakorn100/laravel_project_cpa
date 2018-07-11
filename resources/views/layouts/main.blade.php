@@ -4,23 +4,17 @@
 	<title>Laravel 5.5 : @yield('page_title')</title>
 	{{ Html::style(('//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')) }}
 	{{ Html::style(('css\song\blog.css')) }}
-	{{--
-	@if(isset($style))
-		@foreach ($style as $css)
-			{{ Html::style(( $css )) }}
-		@endforeach
-	@endif
-	--}}
-
 </head>
+
 <body>
+	<nav class="navbar navbar-default">
+  <div class="container">
+		{{-- {{ Html::link('songkorea/','', style="max-width: 150px;", Html::image(asset('images\YK48logo.png'))) }} --}}
+    <img src="images\YK48logo.png" class="img-responsive" style="max-width: 150px;">
+  </div>
+</nav>
 	<div class="main-container">
-
-
 		<div class="container">
-
-
-
 		@yield('content')
 		</div>
 	</div>

@@ -5,3 +5,13 @@ $(document).ready(function(){
     $('.modal').modal('show');
   });
 });
+
+$(document).ready(function(){
+  $('.playMusic').click(function(){
+    var cover_album = $(this).attr('cover_album');
+    var music = $(this).attr('music');
+    $('#music').val(music);
+    $('#cover_album').val(cover_album);
+    $('.navbar');
+  });
+});

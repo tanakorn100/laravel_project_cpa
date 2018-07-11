@@ -2,9 +2,8 @@
 
 @section('page_title','Korean Song Website')
 @section('content')
-<h1>List of Korean Songs</h1>
-<p></p>
-<p></p>
+
+<h1> Korean Song list</h1>
 
 @if(Session::has('message'))
     <div class="alert alert-success">
@@ -36,7 +35,13 @@
           <td>{{ $song['artist'] }}</td>
           <td>{{ $song['durations'] }}</td>
           <td>{{ $song['rating'] }}</td>
-          <th><button class="btn btn-info"><i class="glyphicon glyphicon-music pnx-msg-icon pnx-icon-msg-warning"></i> lis!</button></th>
+          <th><button class="btn btn-info">
+                    {{ Html::link('#', ''  , array(
+                    'class' => 'playMusic glyphicon glyphicon-music',
+                    'cover_album' => $song['cover_album'],
+                    'music' => $song['image_path']
+                  )  ) }}
+          </button></th>
             @auth
           <td><audio controls><source src="{{ $song['image_path'] }}" type="audio/mpeg"></audio></td>
           <td>{{ Html::link('songkorea/'.$song['id'],'',array('class'=>'glyphicon glyphicon-zoom-in')) }} </td>
@@ -55,19 +60,21 @@
     </tbody>
 </table>
 <div class="row">
+
   <div class="col-xs-5 text-left">
+    @auth
       {{ Html::link('songkorea/create','Add Song', array(
         'class' => 'btn btn-primary'
       )) }}
+      @endauth
   </div>
+
   <div class="col-xs-7 text-right">
       {{ Html::link('blog','Go to Blog', array(
         'class' => 'btn btn-success'
       )) }}
   </div>
 </div>
-
-
 
 
 @endsection
@@ -82,7 +89,6 @@
         <audio controls style="width: 100%;"><source src="musics/Kangaroo(Prod. ZICO).m4a" type="audio/mpeg"></audio>
       </div>
       <div class="col-md-2">
-        <i class="glyphicon glyphicon-th-list pnx-msg-icon pnx-icon-msg-warning"></i>
       </div>
     </div>
   </nav>
