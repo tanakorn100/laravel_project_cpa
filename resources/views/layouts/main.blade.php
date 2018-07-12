@@ -10,7 +10,15 @@
 <nav class="navbar navbar-default">
   <div class="container">
 		{{-- {{ Html::link('songkorea/','', style="max-width: 150px;", Html::image(asset('images\YK48logo.png'))) }} --}}
-    <img src="images\YK48logo.png" class="img-responsive" style="max-width: 150px;">
+		<div class="col-md-3">
+			<img src="images\YK48logo.png" class="img-responsive" style="max-width: 150px;">
+		</div>
+		<div class="col-md-9 text-right " >
+			{{ Html::link('login','LOGIN', array(
+        'class' => 'btn btn-default'
+      )) }}
+		</div>
+
   </div>
 </nav>
 

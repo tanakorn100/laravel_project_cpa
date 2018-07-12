@@ -12,7 +12,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group row">
-                            <label for="username" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail or Username') }}</label>
+                            <label for="username" class="col-md-4 control-label">{{ __('E-Mail or Username') }}</label>
 
                             <div class="col-md-6">
                                 <input id="login" type="text"
