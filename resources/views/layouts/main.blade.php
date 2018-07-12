@@ -14,9 +14,32 @@
 			<img src="images\YK48logo.png" class="img-responsive" style="max-width: 150px;">
 		</div>
 		<div class="col-md-9 text-right " >
-			{{ Html::link('login','LOGIN', array(
-        'class' => 'btn btn-default'
-      )) }}
+			@guest
+					{{ Html::link('login','LOGIN', array(
+		        'class' => 'btn btn-default')) }}
+					{{ Html::link('register','REGISTER', array(
+		        'class' => 'btn btn-default')) }}
+			@else
+					<a class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+									{{ Auth::user()->name }} <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+									<li>
+											<a href="{{ route('logout') }}"
+													onclick="event.preventDefault();
+																	 document.getElementById('logout-form').submit();">
+													Logout
+											</a>
+
+											<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+													{{ csrf_field() }}
+											</form>
+									</li>
+							</ul>
+					</a>
+			@endguest
+
 		</div>
 
   </div>
