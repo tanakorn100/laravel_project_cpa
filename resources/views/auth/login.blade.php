@@ -11,15 +11,17 @@
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                        <div class="form-group row">
+                            <label for="username" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail or Username') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="login" type="text"
+                                       class="form-control{{ $errors->has('username') || $errors->has('email') ? ' is-invalid' : '' }}"
+                                       name="login" value="{{ old('username') ?: old('email') }}" required autofocus>
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                @if ($errors->has('username') || $errors->has('email'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('username') ?: $errors->first('email') }}</strong>
                                     </span>
                                 @endif
                             </div>
