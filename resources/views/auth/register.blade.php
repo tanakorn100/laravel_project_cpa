@@ -85,7 +85,7 @@
                             <label for="path_pic_profile" class="col-md-4 control-label">Path Images Profile</label>
 
                             <div class="col-md-6">
-                                <input id="path_pic_profile" type="text" class="form-control" name="path_pic_profile" value="{{ old('path_pic_profile') }}" required autofocus>
+                                <input id="path_pic_profile" type="file" class="form-control" name="path_pic_profile" value="{{ old('path_pic_profile') }}" required autofocus>
 
                                 @if ($errors->has('path_pic_profile'))
                                     <span class="help-block">

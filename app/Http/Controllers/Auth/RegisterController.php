@@ -62,6 +62,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+      // echo var_dump($data['path_pic_profile']);
+      // dd($data);
+      // if($data->hasFile('path_pic_profile')){
+      //   $image_filename = $data->file('path_pic_profile')->getClientOriginalName();
+      //   $image_name = date('Ymd-His-').$image_filename;
+      //   $public_path = '/images/profile/';
+      //   $destination = base_path() . "/public/" . $public_path;
+      //   $data->file('path_pic_profile')->move($destination , $image_name);
+      //   $data['path_pic_profile'] = $public_path . $image_name;
+      // }
         return User::create([
             'name' => $data['name'],
             'username' => $data['username'],

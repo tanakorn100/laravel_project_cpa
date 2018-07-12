@@ -20,7 +20,6 @@
         <th>Rating</th>
         <th></th>
         @auth
-        <th >Music</th>
         <th>Detail</th>
         <th>Update</th>
         <th>Delete</th>
@@ -43,7 +42,6 @@
                   )  ) }}
           </button></th>
             @auth
-          <td><audio controls><source src="{{ $song['image_path'] }}" type="audio/mpeg"></audio></td>
           <td>{{ Html::link('songkorea/'.$song['id'],'',array('class'=>'glyphicon glyphicon-zoom-in')) }} </td>
           <td>{{ Html::link('songkorea/'.$song['id'].'/edit','',array('class'=>'glyphicon glyphicon-cog')) }} </td>
           {{ Form::open(['route'=> ['songkorea.destroy',$song['id'],'method'=>'delete' ] ]) }}
