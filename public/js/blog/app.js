@@ -12,6 +12,6 @@ $(document).ready(function(){
     var music = $(this).attr('music');
     $('#music').val(music);
     $('#cover_album').val(cover_album);
-    $('.navbar');
+    $('.footer').navbar('show');
   });
 });

@@ -34,13 +34,14 @@
           <td>{{ $song['artist'] }}</td>
           <td>{{ $song['durations'] }}</td>
           <td>{{ $song['rating'] }}</td>
-          <th><button class="btn btn-info">
+          {{-- <th><a>
                     {{ Html::link('#', ''  , array(
                     'class' => 'playMusic glyphicon glyphicon-music',
                     'cover_album' => $song['cover_album'],
                     'music' => $song['image_path']
                   )  ) }}
-          </button></th>
+          </a></th> --}}
+          <td><a class="linkright" href="#existingcase?music=<?php echo $song['image_path']; ?>"</a></td>
             @auth
           <td>{{ Html::link('songkorea/'.$song['id'],'',array('class'=>'glyphicon glyphicon-zoom-in')) }} </td>
           <td>{{ Html::link('songkorea/'.$song['id'].'/edit','',array('class'=>'glyphicon glyphicon-cog')) }} </td>
